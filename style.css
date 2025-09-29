@@ -1,6 +1,6 @@
-/* style.css */
-
-/* Style général de la navbar */
+/* =======================
+   Navbar
+======================= */
 .navbar {
     background-color: #333;
     overflow: hidden;
@@ -36,7 +36,6 @@
     left: 0;
     background-color: #444;
     min-width: 150px;
-    z-index: 1000;
     flex-direction: column;
   }
   
@@ -48,9 +47,26 @@
     padding: 10px;
   }
   
-  /* Affichage au survol */
   .dropdown:hover .submenu {
     display: flex;
     flex-direction: column;
+  }
+  
+  /* =======================
+     Contenu
+  ======================= */
+  .content-section {
+    display: none;
+    padding: 20px;
+  }
+  
+  /* Afficher la section ciblée */
+  .content-section:target {
+    display: block;
+  }
+  
+  /* Afficher Accueil par défaut si aucune section ciblée */
+  body:not(:target) #accueil {
+    display: block;
   }
   
