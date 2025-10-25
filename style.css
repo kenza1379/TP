@@ -1,116 +1,239 @@
-/* =======================
-   Navbar
-======================= */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f5f5f5;
-  }
-  
-  .navbar {
-    background-color: #333;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  }
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar li {
-    position: relative;
-  }
-  
-  .navbar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 14px 25px;
-    transition: background-color 0.3s;
-  }
-  
-  .navbar a:hover {
-    background-color: #575757;
-    border-radius: 4px;
-  }
-  
-  /* Sous-menu */
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-    min-width: 160px;
-    flex-direction: column;
-    border-radius: 0 0 4px 4px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  }
-  
-  .submenu li {
-    width: 100%;
-  }
-  
-  .submenu a {
-    padding: 10px 20px;
-  }
-  
-  .dropdown:hover .submenu {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* =======================
-     Contenu
-  ======================= */
-  .content-section {
-    display: none;
-    padding: 60px 20px;
-    text-align: center;
-    background-color: white;
-    margin: 40px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  /* Titre plus joli */
-  .content-section h1 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Texte centré et lisible */
-  .content-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-  }
-  
-  /* Afficher la section ciblée */
-  .content-section:target {
-    display: block;
-  }
-  
-  /* Afficher Accueil par défaut si aucune section ciblée */
-  body:not(:target) #accueil {
-    display: block;
-  }
-  
-  /* Petite transition pour l'apparition */
-  .content-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-  }
-  
-  .content-section:target,
-  body:not(:target) #accueil {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f9;
+  color: #222;
+  margin: 0;
+}
+
+/* HERO sticky avec shrink + glass */
+.hero {
+  background: #fff;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  transition: all 0.4s ease;
+}
+
+.hero.glass {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  padding: 15px 20px; /* shrink padding */
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #222;
+  transition: all 0.4s ease;
+}
+
+.hero.shrink h1 {
+  font-size: 1.5em; /* shrink titre */
+}
+
+/* NAVBAR BUBBLE */
+.navbar-bubble ul {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 25px;
+  padding: 20px 0;
+  list-style: none;
+}
+
+.navbar-bubble ul li {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.navbar-bubble ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.navbar-bubble ul li::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  transition: 0.5s;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+.navbar-bubble ul li:hover {
+  width: 180px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0);
+}
+
+.navbar-bubble ul li:hover::before {
+  opacity: 1;
+}
+
+.navbar-bubble ul li:hover::after {
+  opacity: 0.5;
+}
+
+.navbar-bubble ul li .icon {
+  color: #777;
+  font-size: 1.75em;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.navbar-bubble ul li:hover .icon {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
+}
+
+.navbar-bubble ul li .title {
+  position: absolute;
+  color: #fff;
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.navbar-bubble ul li:hover .title {
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+
+/* MAIN / INTRO */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.intro {
+  color: #666;
+  margin-bottom: 35px;
+  font-size: 1.1em;
+}
+
+/* CARDS / RUBRIQUES */
+.card {
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1.05em;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: all 0.8s cubic-bezier(0.25,1,0.5,1);
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* TITRES RUBRIQUES – compact par défaut, s’agrandit au clic */
+.rubrique-title {
+  font-size: 1.3em;
+  padding: 12px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.2);
+}
+
+.rubrique-title.active {
+  padding: 20px 20px;
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* FILE LIST – fond blanc semi-transparent glass */
+.file-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin-top: 10px;
+}
+
+.file-list.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.file-list li {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 16px 22px;
+  margin-bottom: 16px;
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.08),
+    0 10px 25px rgba(0,0,0,0.06),
+    0 18px 50px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease, box-shadow 0.4s ease;
+}
+
+.file-list.show li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.file-list li:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.12),
+    0 12px 36px rgba(0,0,0,0.08),
+    0 20px 60px rgba(0,0,0,0.05);
+}
+
+.file-list a {
+  color: #4e63d8;
+  font-weight: 600;
+  text-decoration: none;
+  flex: 1;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.file-list a:hover {
+  color: #8a5eff;
+  transform: translateX(5px);
+}
+

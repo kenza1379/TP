@@ -2,63 +2,128 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio - Menu Déroulant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Numérique - MIAGE</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- JS -->
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-  <nav class="navbar">
+  <!-- HERO -->
+  <header class="hero">
+    <h1>📂 Portfolio Numérique - Introduction aux SI</h1>
+  </header>
+
+  <!-- NAVBAR BUBBLE -->
+  <nav class="navbar-bubble">
     <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li class="dropdown">
-        <!-- Le parent "Projets" pointe maintenant vers une section globale "projets" -->
-        <a href="#projets">Projets ▼</a>
-        <ul class="submenu">
-          <li><a href="#site-web">Site Web</a></li>
-          <li><a href="#data-ia">Data/IA</a></li>
-          <li><a href="#autres">Autres</a></li>
-        </ul>
+      <li style="--i:#a955ff;--j:#ea51ff">
+        <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
+        <span class="title">Travaux</span>
       </li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li style="--i:#56CCF2;--j:#2F80ED">
+        <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+        <span class="title">Notes</span>
+      </li>
+      <li style="--i:#FF9966;--j:#FF5E62">
+        <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+        <span class="title">Documents</span>
+      </li>
+      <li style="--i:#80FF72;--j:#7EE8FA">
+        <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
+        <span class="title">Certifications</span>
+      </li>
+      <li style="--i:#ffa9c6;--j:#f434e2">
+        <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
+        <span class="title">Projet</span>
+      </li>
+      <li style="--i:#FFD166;--j:#06D6A0">
+        <span class="icon"><ion-icon name="play-outline"></ion-icon></span>
+        <span class="title">Soutenance</span>
+      </li>
+      <li style="--i:#FF6B6B;--j:#FFE66D">
+        <span class="icon"><ion-icon name="link-outline"></ion-icon></span>
+        <span class="title">Ressources</span>
+      </li>
     </ul>
   </nav>
 
-  <!-- Sections de contenu -->
-  <section id="accueil" class="content-section">
-    <h1>Bienvenue sur mon portfolio</h1>
-    <p>Découvrez mes projets, compétences et contacts via le menu.</p>
-  </section>
+  <!-- MAIN -->
+  <main>
+    <p class="intro">Tous les travaux du module organisés par rubriques.</p>
 
-  <section id="projets" class="content-section">
-    <h1>Projets</h1>
-    <p>Bienvenue dans la section Projets. Choisissez un sous-projet dans le menu.</p>
-  </section>
+    <!-- RUBRIQUE 1 -->
+    <section id="travaux" class="card">
+      <h2 class="rubrique-title">Rubrique 1 : Travaux demandés</h2>
+      <ul class="file-list">
+        <li><a href="#">📄 Travail 1.pdf</a></li>
+        <li><a href="#">📄 Travail 2.pdf</a></li>
+      </ul>
+    </section>
 
-  <section id="site-web" class="content-section">
-    <h1>Projets Site Web</h1>
-    <p>Voici mes projets de sites web.</p>
-  </section>
+    <!-- RUBRIQUE 2 -->
+    <section id="notes" class="card">
+      <h2 class="rubrique-title">Rubrique 2 : Notes de cours</h2>
+      <ul class="file-list">
+        <li><a href="#">📝 Notes Séance 1.pdf</a></li>
+        <li><a href="#">📝 Notes Séance 2.pdf</a></li>
+      </ul>
+    </section>
 
-  <section id="data-ia" class="content-section">
-    <h1>Projets Data/IA</h1>
-    <p>Voici mes projets de data et intelligence artificielle.</p>
-  </section>
+    <!-- RUBRIQUE 3 -->
+    <section id="documents" class="card">
+      <h2 class="rubrique-title">Rubrique 3 : Documents SI</h2>
+      <ul class="file-list">
+        <li><a href="#">📋 Modèle de données.pdf</a></li>
+      </ul>
+    </section>
 
-  <section id="autres" class="content-section">
-    <h1>Autres Projets</h1>
-    <p>Voici d'autres projets intéressants.</p>
-  </section>
+    <!-- RUBRIQUE 4 -->
+    <section id="certifications" class="card">
+      <h2 class="rubrique-title">Rubrique 4 : Certifications</h2>
+      <ul class="file-list">
+        <li>Aucune certification déposée pour l’instant.</li>
+      </ul>
+    </section>
 
-  <section id="competences" class="content-section">
-    <h1>Compétences</h1>
-    <p>Mes compétences techniques et professionnelles.</p>
-  </section>
+    <!-- RUBRIQUE 5 -->
+    <section id="projet" class="card">
+      <h2 class="rubrique-title">Rubrique 5 : Projet final</h2>
+      <ul class="file-list">
+        <li>Ajouter les livrables du projet ici.</li>
+      </ul>
+    </section>
 
-  <section id="contact" class="content-section">
-    <h1>Contact</h1>
-    <p>Vous pouvez me contacter via ce formulaire.</p>
-  </section>
+    <!-- RUBRIQUE 6 -->
+    <section id="soutenance" class="card">
+      <h2 class="rubrique-title">Rubrique 6 : Diaporama</h2>
+      <ul class="file-list">
+        <li>Déposer votre support de soutenance ici.</li>
+      </ul>
+    </section>
+
+    <!-- RUBRIQUE 7 -->
+    <section id="ressources" class="card">
+      <h2 class="rubrique-title">Rubrique 7 : Ressources</h2>
+      <ul class="file-list">
+        <li>Liens ou documents complémentaires.</li>
+      </ul>
+    </section>
+
+  </main>
 
 </body>
 </html>
