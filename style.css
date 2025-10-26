@@ -237,3 +237,7 @@ main {
   transform: translateX(5px);
 }
 
+.file-list a:visited {
+  color: grey;
+  opacity: 0.7;
+}
