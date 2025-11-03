@@ -56,14 +56,17 @@ window.addEventListener('scroll', () => {
 });
 
 // ================= Déroulement des fichiers avec agrandissement rubrique =================
+
+
 const rubriques = document.querySelectorAll(".rubrique-title");
 
 rubriques.forEach(title => {
   title.addEventListener("click", () => {
-    const files = title.nextElementSibling; // <ul class="file-list">
+    const files = title.parentElement.querySelector(".file-list"); // cherche correctement le ul
     if(files) {
       files.classList.toggle("show");
       title.classList.toggle("active"); // agrandit la rubrique
     }
   });
 });
+
