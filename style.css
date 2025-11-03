@@ -1,3 +1,4 @@
+/* ================= BODY ================= */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f4f9;
@@ -5,7 +6,7 @@ body {
   margin: 0;
 }
 
-/* HERO sticky avec shrink + glass */
+/* ================= HERO sticky avec shrink + glass ================= */
 .hero {
   background: #fff;
   padding: 25px 20px;
@@ -34,7 +35,7 @@ body {
   font-size: 1.5em; /* shrink titre */
 }
 
-/* NAVBAR BUBBLE */
+/* ================= NAVBAR BUBBLE ================= */
 .navbar-bubble ul {
   display: flex;
   justify-content: center;
@@ -124,7 +125,7 @@ body {
   transition-delay: 0.25s;
 }
 
-/* MAIN / INTRO */
+/* ================= MAIN / INTRO ================= */
 main {
   max-width: 900px;
   margin: 30px auto;
@@ -138,7 +139,7 @@ main {
   font-size: 1.1em;
 }
 
-/* CARDS / RUBRIQUES */
+/* ================= CARDS / RUBRIQUES ================= */
 .card {
   margin-bottom: 40px;
   background: rgba(255, 255, 255, 0.6);
@@ -162,7 +163,7 @@ main {
   box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* TITRES RUBRIQUES – compact par défaut, s’agrandit au clic */
+/* ================= TITRES RUBRIQUES ================= */
 .rubrique-title {
   font-size: 1.3em;
   padding: 12px 20px;
@@ -179,17 +180,19 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* FILE LIST – fond blanc semi-transparent glass */
+/* ================= FILE LIST – FICHIERS ================= */
 .file-list {
-  max-height: 0;
+  max-height: 0;              /* cachée par défaut */
   overflow: hidden;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
   margin-top: 10px;
+  padding: 0;
+  list-style: none;
 }
 
 .file-list.show {
-  max-height: 500px;
+  max-height: 2000px;         /* assez grand pour tous les fichiers */
   opacity: 1;
 }
 
@@ -208,7 +211,7 @@ main {
   gap: 12px;
   transform: translateY(20px);
   opacity: 0;
-  transition: all 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
 }
 
 .file-list.show li {
