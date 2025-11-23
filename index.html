@@ -30,34 +30,13 @@
   <!-- NAVBAR BUBBLE -->
   <nav class="navbar-bubble">
     <ul>
-      <li style="--i:#a955ff;--j:#ea51ff">
-        <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
-        <span class="title">Travaux</span>
-      </li>
-      <li style="--i:#56CCF2;--j:#2F80ED">
-        <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
-        <span class="title">Notes</span>
-      </li>
-      <li style="--i:#FF9966;--j:#FF5E62">
-        <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
-        <span class="title">Documents</span>
-      </li>
-      <li style="--i:#80FF72;--j:#7EE8FA">
-        <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
-        <span class="title">Certifications</span>
-      </li>
-      <li style="--i:#ffa9c6;--j:#f434e2">
-        <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
-        <span class="title">Projet</span>
-      </li>
-      <li style="--i:#FFD166;--j:#06D6A0">
-        <span class="icon"><ion-icon name="play-outline"></ion-icon></span>
-        <span class="title">Soutenance</span>
-      </li>
-      <li style="--i:#FF6B6B;--j:#FFE66D">
-        <span class="icon"><ion-icon name="link-outline"></ion-icon></span>
-        <span class="title">Ressources</span>
-      </li>
+      <li style="--i:#a955ff;--j:#ea51ff"><span class="icon"><ion-icon name="folder-outline"></ion-icon></span><span class="title">Travaux</span></li>
+      <li style="--i:#56CCF2;--j:#2F80ED"><span class="icon"><ion-icon name="document-text-outline"></ion-icon></span><span class="title">Notes</span></li>
+      <li style="--i:#FF9966;--j:#FF5E62"><span class="icon"><ion-icon name="albums-outline"></ion-icon></span><span class="title">Documents</span></li>
+      <li style="--i:#80FF72;--j:#7EE8FA"><span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span><span class="title">Certifications</span></li>
+      <li style="--i:#ffa9c6;--j:#f434e2"><span class="icon"><ion-icon name="rocket-outline"></ion-icon></span><span class="title">Projet</span></li>
+      <li style="--i:#FFD166;--j:#06D6A0"><span class="icon"><ion-icon name="play-outline"></ion-icon></span><span class="title">Soutenance</span></li>
+      <li style="--i:#FF6B6B;--j:#FFE66D"><span class="icon"><ion-icon name="link-outline"></ion-icon></span><span class="title">Ressources</span></li>
     </ul>
   </nav>
 
@@ -65,79 +44,315 @@
   <main>
     <p class="intro">Tous les travaux du module organisés par rubriques.</p>
 
-    <!-- RUBRIQUE 1 -->
-    <section id="travaux" class="card">
+    <!-- ========================== RUBRIQUE 1 ========================== -->
+    <section id="travaux" class="card r1">
       <h2 class="rubrique-title">Rubrique 1 : Travaux demandés</h2>
-      <ul class="file-list">
-        <li><a href="TD 1 Etude (Concessionnaire automobile).pdf" target="_blank">📄 TD1 Étude de cas (Concessionnaire automobile)</a></li>
-        <li><a href="TD2 Etude (RetailMarket SA).pdf" target="_blank">📄 TD2 Étude de cas (RetailMarket SA)</a></li>
-        <li><a href="td_PGI_exercice.pdf" target="_blank">📄 TD td_PGI_exercice</a></li>
-        <li><a href="PGI_exercice (excel).xltm" target="_blank">📄 PGI_exercice modules (excel) </a></li>
-        <li><a href="TP Odoo – Gestion d’une petite entreprise.pdf" target="_blank">📄 TP Odoo – Gestion d’une petite entreprise </a></li>
-        <li><a href="Le cas QUILOU.drawio.pdf" target="_blank">📄 Schéma événement résultat : le cas de QUILOU  </a></li>
-        <li><a href="diagramme_flux.drawio (1).pdf" target="_blank">📄 Schéma acteur flux : Commande de spécimens </a></li>
-        <li><a href="TP_Diagramme_de_gantt.pdf" target="_blank">📄 TP gantt </a></li>
-        <li><a href="OnlineGantt20251013.pdf" target="_blank">📄 Diagramme de gantt du TP gantt</a></li>
-        <li><a href="MCD_1.drawiocopie.pdf" target="_blank">📄 Modèle Entités-Associations de la méthode MERISE</a></li>
-        <li><a href="USECASE.pdf" target="_blank">📄 Exercices sur les diagrammes de cas d'utilisation (USE CASE) </a></li>
-        <li><a href="Diagramme de classe.pdf" target="_blank">📄 Exercices sur les diagrammes de classe (UML) </a></li>
-      </ul>
+      <div class="file-list">
+
+        <!-- EACH FILE -->
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>TD1 Étude de cas (Concessionnaire automobile)</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="TD 1 Etude (Concessionnaire automobile).pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>TD2 Étude de cas (RetailMarket SA)</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="TD2 Etude (RetailMarket SA).pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>TD PGI – Exercice</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="td_PGI_exercice.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>PGI – Modules Excel</h4>
+            <span class="file-tag">EXCEL</span>
+          </div>
+          <a href="PGI_exercice (excel).xltm" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>TP Odoo – Gestion d’une petite entreprise</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="TP Odoo – Gestion d’une petite entreprise.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Schéma événement-résultat (Cas QUILOU)</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Le cas QUILOU.drawio.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Schéma acteur-flux – Commande de spécimens</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="diagramme_flux.drawio (1).pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>TP Gantt</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="TP_Diagramme_de_gantt.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Diagramme de Gantt – TP Gantt</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="OnlineGantt20251013.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Modèle Entités-Associations (MERISE)</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="MCD_1.drawiocopie.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Exercices USE CASE</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="USECASE.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Exercices Diagrammes de Classe (UML)</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Diagramme de classe.pdf" target="_blank" class="deliverable-small-btn btn-r1">Télécharger</a>
+        </div>
+      </div>
     </section>
 
-    <!-- RUBRIQUE 2 -->
-    <section id="notes" class="card">
+    <!-- ========================== RUBRIQUE 2 ========================== -->
+    <section id="notes" class="card r2">
       <h2 class="rubrique-title">Rubrique 2 : Notes de cours</h2>
-      <ul class="file-list">
-        <li><a href="Difference entre SI et PGI.pdf" target="_blank">📄 Cours sur la difference entre un SI et un PGI</a></li>
-        <li><a href="Cours Processus de geston & modélisation .pdf" target="_blank">📄 Cours sur les Processus de gestion & modélisation</a></li>
-        <li><a href="Difference entre SFG(Spécification Fonctionnelle Générale) et  SFD (Spécification Fonctionnelle Détaillé).pdf" target="_blank">📄 Cours sur la difference entre SFG (Spécification Fonctionnelle Générale) et  SFD (Spécification Fonctionnelle Détaillé)</a></li>
-        <li><a href="Les phases SI.pdf" target="_blank">📄 Cours sur les livrables d’un système d’information (SI)</a></li>
-        <li><a href="Les livrables SI V2.pdf" target="_blank">📄 Cours sur les livrables et les explications de ces livrables d’un système d’information (SI)</a></li>
-        <li><a href="cours use case.pdf" target="_blank">📄 Cours sur les diagrammes de cas d'utilisation (USE CASE)</a></li>
-        
+      <div class="file-list">
 
-      </ul>
+        <div class="deliverable-card">
+          <ion-icon name="book-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Différence entre SI et PGI</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Difference entre SI et PGI.pdf" target="_blank" class="deliverable-small-btn btn-r2">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="book-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Processus de gestion et modélisation</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Cours Processus de geston & modélisation .pdf" target="_blank" class="deliverable-small-btn btn-r2">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="book-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Différence SFG / SFD</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Difference entre SFG(Spécification Fonctionnelle Générale) et  SFD (Spécification Fonctionnelle Détaillé).pdf"
+             target="_blank"
+             class="deliverable-small-btn btn-r2">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="book-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Les phases d’un SI</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Les phases SI.pdf" target="_blank" class="deliverable-small-btn btn-r2">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="book-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Les livrables d’un SI</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="Les livrables SI V2.pdf" target="_blank" class="deliverable-small-btn btn-r2">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="book-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Cours Use Case</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="cours use case.pdf" target="_blank" class="deliverable-small-btn btn-r2">Télécharger</a>
+        </div>
+
+      </div>
     </section>
 
-    <!-- RUBRIQUE 3 -->
-    <section id="documents" class="card">
+    <!-- ========================== RUBRIQUE 3 ========================== -->
+    <section id="documents" class="card r3">
       <h2 class="rubrique-title">Rubrique 3 : Documents SI</h2>
-      <ul class="file-list">
-        <li>Aucune document déposé pour l’instant.</li>
-      </ul>
+      <div class="file-list">
+
+        <div class="deliverable-card">
+          <ion-icon name="warning-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Aucun document déposé pour l’instant</h4>
+            <span class="file-tag">Vide</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- RUBRIQUE 4 -->
-    <section id="certifications" class="card">
+    <!-- ========================== RUBRIQUE 4 ========================== -->
+    <section id="certifications" class="card r4">
       <h2 class="rubrique-title">Rubrique 4 : Certifications</h2>
-      <ul class="file-list">
-        <li>Aucune certification déposée pour l’instant.</li>
-      </ul>
+      <div class="file-list">
+
+        <div class="deliverable-card">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Aucune certification déposée pour l’instant</h4>
+            <span class="file-tag">Vide</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- RUBRIQUE 5 -->
-    <section id="projet" class="card">
+    <!-- ========================== RUBRIQUE 5 ========================== -->
+    <section id="projet" class="card r5">
       <h2 class="rubrique-title">Rubrique 5 : Projet final</h2>
-      <ul class="file-list">
-        <li>Aucun projet déposé pour l’instant.</li>
-      </ul>
+      <div class="file-list">
+
+        <div class="site-link-card">
+          <h3>🌐 Lien du Site Web</h3>
+          <div class="site-link-box">
+            <input type="text" value="https://pgivelo.site/" id="siteLink" readonly>
+            <button onclick="copySiteLink()" class="btn-r5">Copier</button>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Cahier des charges</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a class="deliverable-small-btn btn-r5" href="diaporama_soutenance.pdf" target="_blank">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Rapport de faisabilité</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a class="deliverable-small-btn btn-r5" href="rapport_projet.pdf" target="_blank">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Document SFG</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a class="deliverable-small-btn btn-r5" href="cahier_des_charges.pdf" target="_blank">Télécharger</a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Document SFD</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a class="deliverable-small-btn btn-r5" href="documentation_technique.pdf" target="_blank">Télécharger</a>
+        </div>
+
+      </div>
     </section>
 
-    <!-- RUBRIQUE 6 -->
-    <section id="soutenance" class="card">
+    <!-- ========================== RUBRIQUE 6 ========================== -->
+    <section id="soutenance" class="card r6">
       <h2 class="rubrique-title">Rubrique 6 : Diaporama</h2>
-      <ul class="file-list">
-        <li>Aucun diaporama de soutenance déposé pour l’instant..</li>
-      </ul>
+      <div class="file-list">
+
+        <div class="deliverable-card">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Aucun diaporama déposé pour l’instant</h4>
+            <span class="file-tag">Vide</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- RUBRIQUE 7 -->
-    <section id="ressources" class="card">
+    <!-- ========================== RUBRIQUE 7 ========================== -->
+    <section id="ressources" class="card r7">
       <h2 class="rubrique-title">Rubrique 7 : Ressources</h2>
-      <ul class="file-list">
-        <li><a href="1-TP1-annexe-ExempleCahierDesChargesIntranetINRA.pdf" target="_blank">📄 TP1 ExempleCahierDesChargesIntranetINRA (annexe)  </a></li>
-        <li><a href="cahier-des-charges-devis-support.pdf" target="_blank">📄 Cahier des charges devis support  </a></li>
-      </ul>
+
+      <div class="file-list">
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Exemple Cahier des Charges Intranet INRA</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="1-TP1-annexe-ExempleCahierDesChargesIntranetINRA.pdf" target="_blank" class="deliverable-small-btn btn-r7">
+            Télécharger
+          </a>
+        </div>
+
+        <div class="deliverable-card">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <div class="deliverable-text">
+            <h4>Cahier des charges devis support</h4>
+            <span class="file-tag">PDF</span>
+          </div>
+          <a href="cahier-des-charges-devis-support.pdf" target="_blank" class="deliverable-small-btn btn-r7">
+            Télécharger
+          </a>
+        </div>
+
+      </div>
     </section>
 
   </main>

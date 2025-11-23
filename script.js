@@ -70,3 +70,11 @@ rubriques.forEach(title => {
   });
 });
 
+function copySiteLink() {
+  const link = document.getElementById("siteLink");
+  navigator.clipboard.writeText(link.value);
+  alert("Lien copié !");
+}
+
+
+

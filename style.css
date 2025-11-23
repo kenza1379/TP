@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-/* ================= HERO sticky avec shrink + glass ================= */
+/* ================= HERO sticky ================= */
 .hero {
   background: #fff;
   padding: 25px 20px;
@@ -21,7 +21,7 @@ body {
 .hero.glass {
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(12px);
-  padding: 15px 20px; /* shrink padding */
+  padding: 15px 20px;
 }
 
 .hero h1 {
@@ -32,14 +32,13 @@ body {
 }
 
 .hero.shrink h1 {
-  font-size: 1.5em; /* shrink titre */
+  font-size: 1.5em;
 }
 
 /* ================= NAVBAR BUBBLE ================= */
 .navbar-bubble ul {
   display: flex;
   justify-content: center;
-  position: relative;
   gap: 25px;
   padding: 20px 0;
   list-style: none;
@@ -59,7 +58,8 @@ body {
   transition: 0.5s;
 }
 
-.navbar-bubble ul li::before {
+.navbar-bubble ul li::before,
+.navbar-bubble ul li::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -70,22 +70,14 @@ body {
 }
 
 .navbar-bubble ul li::after {
-  content: "";
-  position: absolute;
   top: 10px;
-  width: 100%;
-  height: 100%;
-  border-radius: 60px;
-  background: linear-gradient(45deg, var(--i), var(--j));
-  transition: 0.5s;
   filter: blur(15px);
   z-index: -1;
-  opacity: 0;
 }
 
 .navbar-bubble ul li:hover {
   width: 180px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0);
+  box-shadow: none;
 }
 
 .navbar-bubble ul li:hover::before {
@@ -99,8 +91,7 @@ body {
 .navbar-bubble ul li .icon {
   color: #777;
   font-size: 1.75em;
-  transition: 0.5s;
-  transition-delay: 0.25s;
+  transition: 0.5s 0.25s;
 }
 
 .navbar-bubble ul li:hover .icon {
@@ -117,7 +108,6 @@ body {
   text-transform: uppercase;
   transform: scale(0);
   transition: 0.5s;
-  transition-delay: 0s;
 }
 
 .navbar-bubble ul li:hover .title {
@@ -125,7 +115,7 @@ body {
   transition-delay: 0.25s;
 }
 
-/* ================= MAIN / INTRO ================= */
+/* ================= MAIN ================= */
 main {
   max-width: 900px;
   margin: 30px auto;
@@ -139,7 +129,7 @@ main {
   font-size: 1.1em;
 }
 
-/* ================= CARDS / RUBRIQUES ================= */
+/* ================= CARDS ================= */
 .card {
   margin-bottom: 40px;
   background: rgba(255, 255, 255, 0.6);
@@ -175,24 +165,23 @@ main {
 }
 
 .rubrique-title.active {
-  padding: 20px 20px;
+  padding: 20px;
   background: rgba(255,255,255,0.35);
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* ================= FILE LIST – FICHIERS ================= */
+/* ================= FILE LIST ================= */
 .file-list {
-  max-height: 0;              /* cachée par défaut */
+  max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
   margin-top: 10px;
-  padding: 0;
   list-style: none;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .file-list.show {
-  max-height: 2000px;         /* assez grand pour tous les fichiers */
+  max-height: 2000px;
   opacity: 1;
 }
 
@@ -202,16 +191,15 @@ main {
   border-radius: 24px;
   padding: 16px 22px;
   margin-bottom: 16px;
-  box-shadow:
-    0 4px 15px rgba(0,0,0,0.08),
-    0 10px 25px rgba(0,0,0,0.06),
-    0 18px 50px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08),
+              0 10px 25px rgba(0,0,0,0.06),
+              0 18px 50px rgba(0,0,0,0.04);
   display: flex;
   align-items: center;
   gap: 12px;
   transform: translateY(20px);
   opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .file-list.show li {
@@ -219,28 +207,182 @@ main {
   opacity: 1;
 }
 
-.file-list li:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.12),
-    0 12px 36px rgba(0,0,0,0.08),
-    0 20px 60px rgba(0,0,0,0.05);
+/* ================= LIEN DU SITE ================= */
+.site-link-card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 15px 0 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.file-list a {
-  color: #4e63d8;
+.site-link-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.site-link-box input {
+  width: 260px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  font-size: 14px;
+  text-align: center;
+}
+
+.site-link-box button {
+  padding: 10px 18px;
+  border: none;
+  background: linear-gradient(90deg, #ff4dcc, #ff74e2);
+  color: white;
   font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.site-link-box button:hover {
+  background: linear-gradient(90deg, #ff3cbc, #ff64d8);
+  transform: translateY(-2px);
+}
+
+/* ================= CARTES LIVRABLES ================= */
+.deliverable-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin: 12px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.2s ease;
+}
+
+.deliverable-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.deliverable-card ion-icon {
+  font-size: 28px;
+  color: #ff4dcc;
+}
+
+.deliverable-text h4 {
+  margin: 0;
+  font-size: 17px;
+}
+
+/* ===== badge PDF ===== */
+.file-tag {
+  background: #ffe0f6;
+  color: #ff4dcc;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* ================= BOUTONS LIVRABLES ================= */
+.deliverable-small-btn {
+  padding: 6px 14px;
+  color: white;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
-  flex: 1;
-  transition: color 0.3s, transform 0.3s;
+  white-space: nowrap;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
 }
 
-.file-list a:hover {
-  color: #8a5eff;
-  transform: translateX(5px);
+/* ================= COULEURS PAR RUBRIQUE ================= */
+.btn-r1 { background: linear-gradient(90deg, #a855f7, #d946ef); }
+.btn-r2 { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.btn-r3 { background: linear-gradient(90deg, #fb923c, #f97316); }
+.btn-r4 { background: linear-gradient(90deg, #34d399, #6ee7b7); }
+.btn-r5 { background: linear-gradient(90deg, #ff4dcc, #ff74e2); }
+
+.deliverable-small-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-.file-list a:visited {
-  color: grey;
-  opacity: 0.7;
+/* ==================== COULEURS PAR RUBRIQUE ==================== */
+
+/* Rubrique 1 – Violet */
+.r1 ion-icon,
+.r1 .file-tag {
+  color: #a855f7;
+  background: #f3e8ff;
+}
+.r1 .deliverable-small-btn {
+  background: linear-gradient(90deg, #a855f7, #d946ef);
+}
+
+/* Rubrique 2 – Bleu */
+.r2 ion-icon,
+.r2 .file-tag {
+  color: #3b82f6;
+  background: #dbeafe;
+}
+.r2 .deliverable-small-btn {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* Rubrique 3 – Orange */
+.r3 ion-icon,
+.r3 .file-tag {
+  color: #fb923c;
+  background: #ffedd5;
+}
+.r3 .deliverable-small-btn {
+  background: linear-gradient(90deg, #fb923c, #f97316);
+}
+
+/* Rubrique 4 – Vert turquoise */
+.r4 ion-icon,
+.r4 .file-tag {
+  color: #34d399;
+  background: #d1fae5;
+}
+.r4 .deliverable-small-btn {
+  background: linear-gradient(90deg, #34d399, #6ee7b7);
+}
+
+/* Rubrique 5 – Rose */
+.r5 ion-icon,
+.r5 .file-tag {
+  color: #ff4dcc;
+  background: #ffe0f6;
+}
+.r5 .deliverable-small-btn {
+  background: linear-gradient(90deg, #ff4dcc, #ff74e2);
+}
+
+/* Rubrique 6 – Jaune / Vert */
+.r6 ion-icon,
+.r6 .file-tag {
+  color: #f6c13b;
+  background: #fff4d6;
+}
+.r6 .deliverable-small-btn {
+  background: linear-gradient(90deg, #FFD166, #06D6A0);
+}
+
+/* Rubrique 7 – Corail / Jaune */
+.r7 ion-icon,
+.r7 .file-tag {
+  color: #ff6b6b;
+  background: #ffe8e8;
+}
+.r7 .deliverable-small-btn {
+  background: linear-gradient(90deg, #FFD166, #FF6B6B);
 }
